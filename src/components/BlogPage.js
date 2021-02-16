@@ -1,12 +1,15 @@
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
 
 const BlogPage = () => {
+
+    const [blogs, setBlogs] = useState(null)
+    const [loading, setLoading] = useState(true)
 
     useEffect(()=>{
 
         const fetchData = async () =>{
             try {
-                fetch('http://localhost:3000/blogs',{
+                fetch('https://oisin-mern-blog.herokuapp.com/blogs',{
                     headers : { 
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
@@ -19,22 +22,22 @@ const BlogPage = () => {
                 })
                 // logs data returnd from json parsing promise above
                 .then((data)=>{
-                    console.log(data.map(data => data.title));
+                    setBlogs(data);
+                    setLoading(false)
                 })      
             } catch (error) {
                 console.log(error);
             }
         }
-
         fetchData()
-        
     })
 
 
     return (
 
-        <div>
-            poop
+        <div className='blogs-conatainer'>
+            {loading && <div>Loading...</div>}
+            {blogs && <div>blogs</div>}
         </div>
 
      );
