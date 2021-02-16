@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import BlogPage from './components/BlogPage';
@@ -11,10 +11,10 @@ function App() {
 
   return (
     <div className="Home">
-      <p>test</p>
       <Router>
+        <Link to='/login'><p>test</p></Link>
         <Switch>
-          <Route exact path='/front-end-test/login'>
+          <Route exact path='/login'>
             <Login loggedIn = {loggedIn} setLoggedIn={setLoggedIn} />
           </Route>
           <Route exact path='/signup' > <SignUp/> </Route>
