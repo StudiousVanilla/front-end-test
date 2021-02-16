@@ -14,7 +14,7 @@ const Home = (props) => {
     <div className="Home">
       <Router>
         <Switch>
-          <Route exact path='/login'>
+          <Route exact path='/front-end-test/login'>
             <Login loggedIn = {loggedIn} setLoggedIn={setLoggedIn} />
           </Route>
           <Route exact path='/signup' > <SignUp/> </Route>
