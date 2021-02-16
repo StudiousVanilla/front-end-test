@@ -26,8 +26,11 @@ const Login = (props) => {
         try {
             fetch('http://localhost:3000/login', {
                 method: 'POST',
-                headers: {"Content-Type": "application/json"},
-                credentials: 'same-origin',
+                headers: {
+                    Accept: 'application/json',
+                    "Content-Type": "application/json"
+                },
+                credentials: 'include',
                 body: JSON.stringify(user)
             })
             .then(response =>  {

@@ -6,11 +6,12 @@ const BlogPage = () => {
 
         const fetchData = async () =>{
             try {
-                fetch('https://oisin-mern-blog.herokuapp.com/blogs',{
+                fetch('http://localhost:3000/blogs',{
                     headers : { 
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
-                    }
+                    },
+                    credentials: "include",
                 })
                 // takes response and parses it into (returns a promise)
                 .then((response)=>{
