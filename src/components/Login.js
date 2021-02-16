@@ -24,7 +24,7 @@ const Login = (props) => {
     const postData = async (user) => {
         
         try {
-            fetch('https://oisin-mern-blog.herokuapp.com/login', {
+            fetch('http://localhost:3000/login', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',

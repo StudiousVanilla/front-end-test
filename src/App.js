@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="Home">
       <Router>
-        <Link to='/login'><p>test</p></Link>
+        <Link to='/login'><p>test1</p></Link>
         <Switch>
           <Route exact path='/login'>
             <Login loggedIn = {loggedIn} setLoggedIn={setLoggedIn} />
