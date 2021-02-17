@@ -31,7 +31,7 @@ const Login = (props) => {
                     'Content-Type': "application/json"
                 },
                 credentials: 'include',
-                mode: "no-cors",
+                // mode: "no-cors",
                 body: JSON.stringify(user)
             })
             .then(response =>  {
